@@ -5,7 +5,6 @@ static NSBundle *_CalendarWeeAppBundle = nil;
 
 @interface CalendarController: NSObject <BBWeeAppController> {
 	UIView *_view;
-	UIImageView *_backgroundView;
 }
 @property (nonatomic, retain) UIView *view;
 @end
@@ -25,15 +24,18 @@ static NSBundle *_CalendarWeeAppBundle = nil;
 
 - (void)dealloc {
 	[_view release];
-	[_backgroundView release];
 	[super dealloc];
 }
 
 - (void)loadFullView {
-
-	// Add subviews to _backgroundView (or _view) here.
   _view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 315.f}}];
-	_view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+}
+
+- (void)viewDidAppear {
+
+  [_view release];
+  
+  _view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 315.f}}];
 
   EKEventStore *store = [[EKEventStore alloc] init];
 
@@ -183,9 +185,7 @@ static NSBundle *_CalendarWeeAppBundle = nil;
       }
     }
   }
-}
 
-- (void)viewDidAppear {
 }
 
 - (void)loadPlaceholderView {
