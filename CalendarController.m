@@ -30,6 +30,7 @@ static NSBundle *_CalendarWeeAppBundle = nil;
 }
 
 - (void)loadFullView {
+
 	// Add subviews to _backgroundView (or _view) here.
   _view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 315.f}}];
 	_view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
@@ -69,7 +70,11 @@ static NSBundle *_CalendarWeeAppBundle = nil;
 
   while ((object = [e nextObject])) {
     // do something with object
-    if (offset < 455) {
+    if (offset >= 455) {
+
+      break;
+
+    } else {
 
       if ([object isAllDay] || [object status] == EKEventStatusCanceled) {
 
@@ -178,6 +183,9 @@ static NSBundle *_CalendarWeeAppBundle = nil;
       }
     }
   }
+}
+
+- (void)viewDidAppear {
 }
 
 - (void)loadPlaceholderView {
