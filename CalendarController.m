@@ -31,15 +31,7 @@ static NSBundle *_CalendarWeeAppBundle = nil;
 
 - (void)loadFullView {
 	// Add subviews to _backgroundView (or _view) here.
-}
-
-- (void)loadPlaceholderView {
-	// This should only be a placeholder - it should not connect to any servers or perform any intense
-	// data loading operations.
-	//
-	// All widgets are 316 points wide. Image size calculations match those of the Stocks widget.
-	//_view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 515.f}}];
-	_view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 315.f}}];
+  _view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 315.f}}];
 	_view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 
   EKEventStore *store = [[EKEventStore alloc] init];
@@ -186,6 +178,14 @@ static NSBundle *_CalendarWeeAppBundle = nil;
       }
     }
   }
+}
+
+- (void)loadPlaceholderView {
+	// This should only be a placeholder - it should not connect to any servers or perform any intense
+	// data loading operations.
+	//
+	// All widgets are 316 points wide. Image size calculations match those of the Stocks widget.
+	//_view = [[UIView alloc] initWithFrame:(CGRect){CGPointZero, {316.f, 515.f}}];
 }
 
 - (void)unloadView {
