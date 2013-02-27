@@ -1,0 +1,9 @@
+Package: com.jamesuriah.calendar
+Name: Calendar
+Depends: firmware (>= 5.0), com.saurik.substrate.safemode, com.chpwn.weeloader
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome widget for the notification center!
+Maintainer: James Daniels
+Author: James Daniels
+Section: Addons (NotificationCenter)
