@@ -4,4 +4,6 @@ _/**
 *.deb
 obj/**
 theos
-
+settings/obj/**
+settings/_/**
+settings/.theos/**
