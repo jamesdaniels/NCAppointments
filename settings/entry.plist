@@ -1,0 +1,10 @@
+{
+  entry = {
+	  bundle = CalendarX;
+	  cell = PSLinkCell;
+	  detail = CalendarXListController;
+	  icon = CalendarX.png;
+	  isController = 1;
+	  label = "Calendar X";
+  };
+}
